@@ -24,18 +24,6 @@
     "enTitle": "Power BI"
   },
   {
-    "title": "Microsoft Power BI Data Analyst Certificate",
-    "institution": "Microsoft",
-    "hours": 60,
-    "category": "Power BI • DAX • Data Modeling • Business Intelligence",
-    "logo": "assets/images/logos/microsoft.png",
-    "credentialUrl": "",
-    "ptCategory": "Power BI • DAX • Modelagem de Dados • Business Intelligence",
-    "enCategory": "Power BI • DAX • Data Modeling • Business Intelligence",
-    "ptTitle": "Certificado Microsoft Power BI Data Analyst",
-    "enTitle": "Microsoft Power BI Data Analyst Certificate"
-  },
-  {
     "title": "BI with Excel: Creating Databases with Spreadsheets",
     "institution": "Alura",
     "hours": "",
