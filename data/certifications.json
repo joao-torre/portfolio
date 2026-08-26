@@ -1,15 +1,15 @@
 [
   {
-    "title": "Sarbanes-Oxley Act (SOX) - CEFIS",
-    "institution": "CEFIS",
+    "title": "Microsoft Certified: Fabric Analytics Engineer Associate",
+    "institution": "Microsoft",
     "hours": "",
-    "category": "Governance • Compliance • Internal Controls",
-    "logo": "assets/images/logos/cefis.png",
+    "category": "Microsoft Fabric • Analytics Engineering • Data Modeling • Power BI",
+    "logo": "assets/images/logos/microsoft.png",
     "credentialUrl": "",
-    "ptCategory": "Governança • Compliance • Controles Internos",
-    "enCategory": "Governance • Compliance • Internal Controls",
-    "ptTitle": "Lei Sarbanes Oxley (SOX) - CEFIS",
-    "enTitle": "Sarbanes-Oxley Act (SOX) - CEFIS"
+    "ptCategory": "Microsoft Fabric • Engenharia de Analytics • Modelagem de Dados • Power BI",
+    "enCategory": "Microsoft Fabric • Analytics Engineering • Data Modeling • Power BI",
+    "ptTitle": "Microsoft Certified: Fabric Analytics Engineer Associate",
+    "enTitle": "Microsoft Certified: Fabric Analytics Engineer Associate"
   },
   {
     "title": "Power BI",

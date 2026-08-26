@@ -6,6 +6,12 @@
 
 const GITHUB_USERNAME = 'joao-torre';
 
+const FEATURED_REPOS = [
+  'Credit-Recovery-Curve',
+  'Performance-Analytics',
+  'Financial-Anomaly-Detection'
+];
+
 /**
  * Busca os repositórios públicos do usuário, ordenados por atualização mais recente.
  * @returns {Promise<Array>} lista de repositórios já filtrada (sem forks) e mapeada
@@ -20,7 +26,8 @@ async function fetchGithubRepos() {
     const repos = await response.json();
 
     return repos
-      .filter((repo) => !repo.fork)
+      .filter((repo) => !repo.fork && FEATURED_REPOS.includes(repo.name))
+      .sort((a, b) => FEATURED_REPOS.indexOf(a.name) - FEATURED_REPOS.indexOf(b.name))
       .map((repo) => ({
         name: repo.name,
         description: repo.description || 'Sem descrição.',

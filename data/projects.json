@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "repo": "Credit-Recovery-Curve",
+    "title": "Credit Recovery Curve",
+    "stack": [
+      "Python",
+      "Credit Analytics",
+      "Cohort Analysis",
+      "Vintage Analysis"
+    ],
+    "pt": {
+      "objective": "Analisar a evolução da recuperação de crédito após o default, explorando produtos, perfis de risco, coortes e vintages para identificar padrões de performance.",
+      "challenges": "Estruturar métricas de Recovery Rate e curvas de recuperação a partir de dados sintéticos e transformar os resultados em análises comparáveis.",
+      "learnings": "Aplicação prática de Data Analytics em crédito, incluindo Recovery Curve, Cohort Analysis e Vintage Analysis."
+    },
+    "en": {
+      "objective": "Analyze credit recovery after default, exploring products, risk profiles, cohorts and vintages to identify performance patterns.",
+      "challenges": "Structure Recovery Rate metrics and recovery curves from synthetic data and turn results into comparable analyses.",
+      "learnings": "Practical application of Data Analytics in credit, including Recovery Curve, Cohort Analysis and Vintage Analysis."
+    }
+  },
+  {
+    "repo": "Performance-Analytics",
+    "title": "Performance Analytics",
+    "stack": [
+      "Power BI",
+      "Analytics",
+      "KPIs",
+      "Business Intelligence"
+    ],
+    "pt": {
+      "objective": "Analisar performance operacional por meio de indicadores, evolução temporal e identificação de desvios, transformando dados em informações para acompanhamento e decisão.",
+      "challenges": "Transformar dados operacionais em KPIs, análises e visualizações que facilitem a identificação de tendências e desvios.",
+      "learnings": "Aplicação prática de Business Intelligence, KPI design, análise de performance e storytelling analítico."
+    },
+    "en": {
+      "objective": "Analyze operational performance through KPIs, time trends and deviation analysis, turning data into decision-support information.",
+      "challenges": "Turn operational data into KPIs, analyses and visualizations that make trends and deviations easier to identify.",
+      "learnings": "Practical application of Business Intelligence, KPI design, performance analytics and analytical storytelling."
+    }
+  },
+  {
+    "repo": "Financial-Anomaly-Detection",
+    "title": "Financial Anomaly Detection",
+    "stack": [
+      "Python",
+      "Machine Learning",
+      "Isolation Forest",
+      "FastAPI"
+    ],
+    "pt": {
+      "objective": "Identificar comportamentos anômalos em transações financeiras sintéticas utilizando aprendizado não supervisionado e análise de dados.",
+      "challenges": "Criar features comportamentais, aplicar Isolation Forest e transformar o resultado em um Risk Score demonstrativo.",
+      "learnings": "Aplicação de Feature Engineering, Anomaly Detection, model scoring, testes e API REST em um pipeline de dados."
+    },
+    "en": {
+      "objective": "Identify anomalous behavior in synthetic financial transactions using unsupervised learning and data analytics.",
+      "challenges": "Build behavioral features, apply Isolation Forest and transform the output into a demonstrative Risk Score.",
+      "learnings": "Practical application of Feature Engineering, Anomaly Detection, model scoring, testing and REST API in a data pipeline."
+    }
+  }
+]

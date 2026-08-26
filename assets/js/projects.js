@@ -37,11 +37,14 @@
 
     const stackTags = stack.map((s) => `<span class="tag">${s}</span>`).join('');
 
+    const lang = window.portfolioI18n?.getLanguage() || 'pt';
+    const localized = hasCurated ? (curated[lang] || curated.pt || curated.en || {}) : {};
+
     const details = hasCurated
       ? `
-        ${curated.objective ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.objective") || "Objetivo:"}</strong> ${curated.objective}</p>` : ''}
-        ${curated.challenges ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.challenges") || "Desafios:"}</strong> ${curated.challenges}</p>` : ''}
-        ${curated.learnings ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.learnings") || "Aprendizados:"}</strong> ${curated.learnings}</p>` : ''}
+        ${localized.objective ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.objective") || "Objetivo:"}</strong> ${localized.objective}</p>` : ''}
+        ${localized.challenges ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.challenges") || "Desafios:"}</strong> ${localized.challenges}</p>` : ''}
+        ${localized.learnings ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.learnings") || "Aprendizados:"}</strong> ${localized.learnings}</p>` : ''}
       `
       : `<p class="project-card__row">${repo.description}</p>`;
 

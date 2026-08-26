@@ -1,8 +1,10 @@
 # João Gabriel Torre — Portfolio
 
-Site pessoal de João Gabriel Gomes da Torre, Data Analytics com foco em Crédito, Cobrança, Risco e Business Intelligence.
+Portfólio profissional de João Gabriel Gomes da Torre, com foco em Data Analytics, Business Intelligence, Credit Analytics e Financial Analytics.
 
-**Conceito:** Transforming Data into Strategic Decisions.
+**Posicionamento:** Data Analytics · Business Intelligence · Credit Analytics
+
+**Slogan:** Transformando Dados em Decisões Estratégicas.
 
 🔗 Live: [joao-torre.vercel.app](https://joao-torre.vercel.app/)
 
@@ -42,9 +44,9 @@ npx serve .
 python3 -m http.server 5500
 ```
 
-## Curando um projeto no GitHub
+## Projetos em destaque
 
-A seção de Projetos puxa automaticamente todos os repositórios públicos via GitHub API — não precisa tocar em código pra um projeto novo aparecer.
+A seção de Projetos exibe os três projetos estratégicos do portfólio e utiliza `data/projects.json` para apresentar objetivo, desafios, aprendizados e stack em português e inglês.
 
 Para enriquecer um card específico com objetivo, desafios e aprendizados, adicione uma entrada em `data/projects.json` com o campo `repo` igual ao nome exato do repositório:
 

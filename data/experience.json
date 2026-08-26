@@ -5,13 +5,13 @@
     "location": "Sorocaba, SP",
     "period": "Jun/2026 — Atual",
     "current": true,
-    "summary": "Atuação no desenvolvimento de soluções analíticas e indicadores para suporte à tomada de decisão, otimização operacional e evolução da performance das operações de cobrança.",
+    "summary": "Analista de Planejamento de Cobrança no Banco Afinz, desenvolvendo análises de dados, indicadores de performance e soluções orientadas ao negócio.",
     "highlights": [
       "Desenvolvimento de dashboards executivos em Power BI para monitoramento de performance operacional e indicadores estratégicos.",
       "Extração, tratamento e modelagem de dados utilizando Oracle Database, Amazon Athena e Amazon S3.",
       "Estruturação de análises sobre comportamento de carteiras, recuperação, segmentação, aging e eficiência operacional.",
       "Automação de processos analíticos com Python e Power Query, reduzindo atividades manuais e ampliando a produtividade das rotinas de análise.",
-      "Construção de estudos, relatórios executivos e indicadores para suporte à gestão e tomada de decisão.",
+      "Construção de estudos, relatórios e análises gerenciais para diferentes níveis de gestão, apoiando a tomada de decisão.",
       "Atuação integrada com equipes de Operações, Analytics, Dados e Tecnologia, contribuindo para a evolução de processos, indicadores e estratégias de cobrança."
     ],
     "stack": [
@@ -25,26 +25,26 @@
     "pt": {
       "role": "Analista de Planejamento de Cobrança",
       "period": "Jun/2026 — Atual",
-      "summary": "Atuação no desenvolvimento de soluções analíticas e indicadores para suporte à tomada de decisão, otimização operacional e evolução da performance das operações de cobrança.",
+      "summary": "Analista de Planejamento de Cobrança no Banco Afinz, desenvolvendo análises de dados, indicadores de performance e soluções orientadas ao negócio.",
       "highlights": [
         "Desenvolvimento de dashboards executivos em Power BI para monitoramento de performance operacional e indicadores estratégicos.",
         "Extração, tratamento e modelagem de dados utilizando Oracle Database, Amazon Athena e Amazon S3.",
         "Estruturação de análises sobre comportamento de carteiras, recuperação, segmentação, aging e eficiência operacional.",
         "Automação de processos analíticos com Python e Power Query, reduzindo atividades manuais e ampliando a produtividade das rotinas de análise.",
-        "Construção de estudos, relatórios executivos e indicadores para suporte à gestão e tomada de decisão.",
+        "Construção de estudos, relatórios e análises gerenciais para diferentes níveis de gestão, apoiando a tomada de decisão.",
         "Atuação integrada com equipes de Operações, Analytics, Dados e Tecnologia, contribuindo para a evolução de processos, indicadores e estratégias de cobrança."
       ]
     },
     "en": {
       "role": "Collections Planning Analyst",
       "period": "Jun 2026 — Present",
-      "summary": "Developing analytical solutions and KPIs to support decision-making, operational optimization and performance improvement across collections operations.",
+      "summary": "Collections Planning Analyst at Banco Afinz, developing data analyses, performance indicators and business-oriented solutions.",
       "highlights": [
         "Developing executive Power BI dashboards to monitor operational performance and strategic KPIs.",
         "Extracting, transforming and modeling data using Oracle Database, Amazon Athena and Amazon S3.",
         "Structuring analyses on portfolio behavior, recovery, segmentation, aging and operational efficiency.",
         "Automating analytical processes with Python and Power Query, reducing manual activities and increasing productivity.",
-        "Building studies, executive reports and KPIs to support management and decision-making.",
+        "Building reports and management analyses for different levels of leadership to support decision-making.",
         "Working closely with Operations, Analytics, Data and Technology teams to improve processes, indicators and collections strategies."
       ]
     }
@@ -61,6 +61,7 @@
       "Parametrização de filas, estratégias de discagem e regras de distribuição operacional.",
       "Elaboração de análises operacionais, forecast e estudos de planejamento de capacidade.",
       "Construção e acompanhamento de dashboards e indicadores de performance operacional.",
+      "Elaboração de relatórios para diferentes níveis de gestão, incluindo o acompanhamento diário de operações para suporte à liderança.",
       "Interface entre as áreas de Operações, Planejamento e Tecnologia, apoiando a implementação e evolução de soluções operacionais."
     ],
     "stack": [
@@ -77,6 +78,7 @@
         "Parametrização de filas, estratégias de discagem e regras de distribuição operacional.",
         "Elaboração de análises operacionais, forecast e estudos de planejamento de capacidade.",
         "Construção e acompanhamento de dashboards e indicadores de performance operacional.",
+        "Elaboração de relatórios para diferentes níveis de gestão, incluindo o acompanhamento diário de operações para suporte à liderança.",
         "Interface entre as áreas de Operações, Planejamento e Tecnologia, apoiando a implementação e evolução de soluções operacionais."
       ]
     },
@@ -89,6 +91,7 @@
         "Parameterization of queues, dialing strategies and operational distribution rules.",
         "Developing operational analyses, forecasting and capacity planning studies.",
         "Building and monitoring dashboards and operational performance indicators.",
+        "Preparing reports for different levels of leadership, including daily operations reporting to support management.",
         "Working across Operations, Planning and Technology to support the implementation and improvement of operational solutions."
       ]
     }
