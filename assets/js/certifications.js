@@ -26,37 +26,43 @@
       const certifications = await response.json();
       render(certifications);
     } catch (error) {
+      // Preserva os cards estáticos já presentes no HTML em vez de esvaziar a seção.
       console.error('[certifications.js]', error);
-      grid.innerHTML = `<p class="hero__tagline" style="font-size: var(--fs-body); font-family: var(--font-body); color: var(--color-text-muted);">
-        Não foi possível carregar as certificações. Sirva o projeto via HTTP (ex: <code>npx serve .</code>) para visualizar esta seção.
-      </p>`;
     }
   }
 
   function render(certifications) {
+    const esc = window.portfolioDom?.escapeHtml || ((v) => String(v ?? ''));
+    const url = window.portfolioDom?.safeUrl || (() => '');
+
     grid.innerHTML = certifications
       .map((cert, index) => {
-        const badgeInitials = initials(cert.institution);
+        const badgeInitials = esc(initials(cert.institution));
         const lang = window.portfolioI18n?.getLanguage() || 'pt';
         const category = lang === 'en' ? (cert.enCategory || cert.category) : (cert.ptCategory || cert.category);
         const title = lang === 'en' ? (cert.enTitle || cert.title) : (cert.ptTitle || cert.title);
+        const logo = url(cert.logo);
+        const institutionUrl = url(cert.institutionUrl);
+        const credentialUrl = url(cert.credentialUrl);
 
         return `
           <article class="cert-card" data-reveal data-reveal-delay="${index * 70}">
             <div class="cert-card__header">
               <div class="cert-card__logo" data-fallback="${badgeInitials}">
-                ${cert.logo ? `<img src="${cert.logo}" alt="${cert.institution}" loading="lazy" onerror="this.parentElement.classList.add('cert-card__logo--fallback'); this.outerHTML='<span>${badgeInitials}</span>';" />` : `<span>${badgeInitials}</span>`}
+                ${logo ? `<img src="${logo}" alt="${esc(cert.institution)}" loading="lazy" data-logo-fallback="${badgeInitials}" />` : `<span>${badgeInitials}</span>`}
               </div>
-              ${cert.hours ? `<span class="tag cert-card__hours">${cert.hours}h</span>` : ''}
+              ${cert.hours ? `<span class="tag cert-card__hours">${esc(cert.hours)}h</span>` : ''}
             </div>
-            <h3 class="cert-card__title">${title}</h3>
-            ${cert.institutionUrl ? `<p class="cert-card__institution"><a href="${cert.institutionUrl}" target="_blank" rel="noopener noreferrer"><strong>${cert.institution}</strong></a></p>` : `<p class="cert-card__institution">${cert.institution}</p>`}
-            <span class="cert-card__category mono">${category}</span>
-            ${cert.credentialUrl ? `<a href="${cert.credentialUrl}" target="_blank" rel="noopener noreferrer" class="cert-card__link">${window.portfolioI18n?.t("dynamic.viewCredential") || "Ver credencial →"}</a>` : ''}
+            <h3 class="cert-card__title">${esc(title)}</h3>
+            ${institutionUrl ? `<p class="cert-card__institution"><a href="${institutionUrl}" target="_blank" rel="noopener noreferrer"><strong>${esc(cert.institution)}</strong></a></p>` : `<p class="cert-card__institution">${esc(cert.institution)}</p>`}
+            <span class="cert-card__category mono">${esc(category)}</span>
+            ${credentialUrl ? `<a href="${credentialUrl}" target="_blank" rel="noopener noreferrer" class="cert-card__link">${esc(window.portfolioI18n?.t("dynamic.viewCredential") || "Ver credencial →")}</a>` : ''}
           </article>
         `;
       })
       .join('');
+
+    window.portfolioDom?.bindLogoFallbacks(grid);
 
     const observer = new IntersectionObserver(
       (entries) => {

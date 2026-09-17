@@ -17,10 +17,15 @@ const FEATURED_REPOS = [
  * @returns {Promise<Array>} lista de repositórios já filtrada (sem forks) e mapeada
  */
 async function fetchGithubRepos() {
-  const endpoint = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`;
+  // per_page=100: com sort=updated e um limite baixo, um repositório destacado
+  // some da listagem assim que 12 outros repos forem atualizados depois dele.
+  const endpoint = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`;
 
   try {
     const response = await fetch(endpoint);
+    // A API sem autenticação permite 60 requisições/hora por IP. Em rede
+    // corporativa (IP compartilhado por NAT) o 403 acontece com facilidade —
+    // por isso projects.js precisa ter um fallback local.
     if (!response.ok) throw new Error(`GitHub API respondeu ${response.status}`);
 
     const repos = await response.json();

@@ -26,42 +26,63 @@
   }
 
   function projectCard(repo, curated) {
+    const esc = window.portfolioDom?.escapeHtml || ((v) => String(v ?? ''));
+    const url = window.portfolioDom?.safeUrl || (() => '');
+
     const hasCurated = Boolean(curated);
-    const image = curated?.image
-      ? `<div class="project-card__image" style="background-image: url('${curated.image}')"></div>`
-      : `<div class="project-card__image project-card__image--placeholder"><span class="mono">${repo.name}</span></div>`;
+    const coverImage = url(curated?.image);
+    const image = coverImage
+      ? `<div class="project-card__image" style="background-image: url('${coverImage}')"></div>`
+      : `<div class="project-card__image project-card__image--placeholder"><span class="mono">${esc(repo.name)}</span></div>`;
 
     const stack = curated?.stack?.length
       ? curated.stack
       : [repo.language].filter(Boolean);
 
-    const stackTags = stack.map((s) => `<span class="tag">${s}</span>`).join('');
+    const stackTags = stack.map((s) => `<span class="tag">${esc(s)}</span>`).join('');
 
     const lang = window.portfolioI18n?.getLanguage() || 'pt';
     const localized = hasCurated ? (curated[lang] || curated.pt || curated.en || {}) : {};
 
     const details = hasCurated
       ? `
-        ${localized.objective ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.objective") || "Objetivo:"}</strong> ${localized.objective}</p>` : ''}
-        ${localized.challenges ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.challenges") || "Desafios:"}</strong> ${localized.challenges}</p>` : ''}
-        ${localized.learnings ? `<p class="project-card__row"><strong>${window.portfolioI18n?.t("dynamic.learnings") || "Aprendizados:"}</strong> ${localized.learnings}</p>` : ''}
+        ${localized.objective ? `<p class="project-card__row"><strong>${esc(window.portfolioI18n?.t("dynamic.objective") || "Objetivo:")}</strong> ${esc(localized.objective)}</p>` : ''}
+        ${localized.challenges ? `<p class="project-card__row"><strong>${esc(window.portfolioI18n?.t("dynamic.challenges") || "Desafios:")}</strong> ${esc(localized.challenges)}</p>` : ''}
+        ${localized.learnings ? `<p class="project-card__row"><strong>${esc(window.portfolioI18n?.t("dynamic.learnings") || "Aprendizados:")}</strong> ${esc(localized.learnings)}</p>` : ''}
       `
-      : `<p class="project-card__row">${repo.description}</p>`;
+      : `<p class="project-card__row">${esc(repo.description)}</p>`;
+
+    const repoUrl = url(repo.url) || `https://github.com/joao-torre/${encodeURIComponent(repo.name)}`;
 
     return `
       <article class="project-card" data-reveal>
         ${image}
         <div class="project-card__body">
-          <h3 class="project-card__title">${curated?.title || repo.name}</h3>
+          <h3 class="project-card__title">${esc(curated?.title || repo.name)}</h3>
           <div class="project-card__stack">${stackTags}</div>
           <div class="project-card__details">${details}</div>
           <div class="project-card__footer">
-            ${repo.stars ? `<span class="mono project-card__stars">★ ${repo.stars}</span>` : '<span></span>'}
-            <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">${window.portfolioI18n?.t("dynamic.viewGithub") || "Ver no GitHub"}</a>
+            ${repo.stars ? `<span class="mono project-card__stars">★ ${esc(repo.stars)}</span>` : '<span></span>'}
+            <a href="${repoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">${esc(window.portfolioI18n?.t("dynamic.viewGithub") || "Ver no GitHub")}</a>
           </div>
         </div>
       </article>
     `;
+  }
+
+  /**
+   * Converte as entradas curadas de projects.json no mesmo formato devolvido
+   * pela GitHub API. Usado quando a API falha (rate limit de 60 req/h por IP,
+   * rede corporativa, GitHub fora do ar) — assim a seção nunca fica vazia.
+   */
+  function reposFromCurated(curatedList) {
+    return curatedList.map((c) => ({
+      name: c.repo,
+      description: c.title || c.repo,
+      url: `https://github.com/joao-torre/${c.repo}`,
+      language: c.stack?.[0] || null,
+      stars: 0,
+    }));
   }
 
   function emptyState() {
@@ -90,17 +111,25 @@
       loadCuratedData(),
     ]);
 
-    if (repos === null) {
+    // Se a GitHub API falhou ou não devolveu nenhum dos repositórios
+    // destacados, cai para os dados curados locais em vez de mostrar erro.
+    let effectiveRepos = repos;
+
+    if ((repos === null || repos.length === 0) && curatedList.length > 0) {
+      effectiveRepos = reposFromCurated(curatedList);
+    }
+
+    if (effectiveRepos === null) {
       errorState();
       return;
     }
 
-    if (repos.length === 0) {
+    if (effectiveRepos.length === 0) {
       emptyState();
       return;
     }
 
-    grid.innerHTML = repos
+    grid.innerHTML = effectiveRepos
       .map((repo) => {
         const curated = curatedList.find((c) => c.repo === repo.name);
         return projectCard(repo, curated);

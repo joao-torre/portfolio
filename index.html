@@ -80,11 +80,11 @@
 
       <nav class="navbar__links" data-nav-links>
         <a href="#home" class="navbar__link" data-i18n="nav.home">Home</a>
-        <a href="#about" class="navbar__link" data-i18n="nav.about">About</a>
-        <a href="#experience" class="navbar__link" data-i18n="nav.experience">Experience</a>
-        <a href="#projects" class="navbar__link" data-i18n="nav.projects">Projects</a>
-        <a href="#certifications" class="navbar__link" data-i18n="nav.certifications">Certifications</a>
-        <a href="#contact" class="navbar__link" data-i18n="nav.contact">Contact</a>
+        <a href="#about" class="navbar__link" data-i18n="nav.about">Sobre</a>
+        <a href="#experience" class="navbar__link" data-i18n="nav.experience">Experiência</a>
+        <a href="#projects" class="navbar__link" data-i18n="nav.projects">Projetos</a>
+        <a href="#certifications" class="navbar__link" data-i18n="nav.certifications">Certificações</a>
+        <a href="#contact" class="navbar__link" data-i18n="nav.contact">Contato</a>
       </nav>
 
 
@@ -114,15 +114,15 @@
           </p>
 
           <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary" data-i18n="hero.explore">Explore My Work</a>
+            <a href="#projects" class="btn btn--primary" data-i18n="hero.explore">Ver meus projetos</a>
             <!-- TODO: apontar para o PDF real do currículo quando o arquivo for adicionado em /assets -->
-            <a href="#contact" class="btn btn--ghost" data-i18n="hero.connect">Let's Connect</a>
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero.connect">Vamos conversar</a>
           </div>
         </div>
       </div>
 
       <div class="scroll-indicator">
-        <span class="scroll-indicator__label mono" data-i18n="hero.scroll">Scroll</span>
+        <span class="scroll-indicator__label mono" data-i18n="hero.scroll">Role</span>
         <span class="scroll-indicator__line"></span>
       </div>
     </section>
@@ -236,8 +236,63 @@
           <h2 class="section-title" data-i18n="section.experienceTitle">Experiência Profissional</h2>
         </div>
 
+        <!-- Conteúdo estático = fallback. timeline.js substitui por data/experience.json
+             quando o JS roda; sem JS (ou com fetch bloqueado) o histórico continua visível. -->
         <ol class="timeline" data-timeline>
-          <!-- Preenchido dinamicamente por timeline.js a partir de data/experience.json -->
+          <li class="timeline__item timeline__item--current" data-reveal data-reveal-delay="0">
+            <div class="timeline__meta">
+              <span>Jun/2026 — Atual</span>
+              <span>·</span>
+              <span>Sorocaba, SP</span>
+              <span class="timeline__badge">Atual</span>
+            </div>
+            <h3 class="timeline__role">Analista de Planejamento de Cobrança</h3>
+            <p class="timeline__company">Banco Afinz</p>
+            <p class="timeline__summary">Analista de Planejamento de Cobrança no Banco Afinz, desenvolvendo análises de dados, indicadores de performance e soluções orientadas ao negócio.</p>
+            <ul class="timeline__highlights">
+              <li>Desenvolvimento de dashboards executivos em Power BI para monitoramento de performance operacional e indicadores estratégicos.</li>
+              <li>Extração, tratamento e modelagem de dados utilizando Oracle Database, Amazon Athena e Amazon S3.</li>
+              <li>Estruturação de análises sobre comportamento de carteiras, recuperação, segmentação, aging e eficiência operacional.</li>
+              <li>Automação de processos analíticos com Python e Power Query, reduzindo atividades manuais e ampliando a produtividade das rotinas de análise.</li>
+              <li>Construção de estudos, relatórios e análises gerenciais para diferentes níveis de gestão, apoiando a tomada de decisão.</li>
+              <li>Atuação integrada com equipes de Operações, Analytics, Dados e Tecnologia, contribuindo para a evolução de processos, indicadores e estratégias de cobrança.</li>
+            </ul>
+            <div class="timeline__stack"><span class="tag">Power BI</span><span class="tag">Oracle SQL</span><span class="tag">Amazon Athena</span><span class="tag">Amazon S3</span><span class="tag">Python</span><span class="tag">Power Query</span></div>
+          </li>
+          <li class="timeline__item" data-reveal data-reveal-delay="80">
+            <div class="timeline__meta">
+              <span>Jun/2024 — Mai/2026</span>
+              <span>·</span>
+              <span>Sorocaba, SP</span>
+            </div>
+            <h3 class="timeline__role">Assistente de Operações</h3>
+            <p class="timeline__company">Banco Afinz</p>
+            <p class="timeline__summary">Atuação no planejamento e suporte às operações, com foco no acompanhamento de campanhas, gestão operacional e desenvolvimento de análises para melhoria contínua da performance.</p>
+            <ul class="timeline__highlights">
+              <li>Gestão operacional de campanhas utilizando Genesys Cloud CX.</li>
+              <li>Parametrização de filas, estratégias de discagem e regras de distribuição operacional.</li>
+              <li>Elaboração de análises operacionais, forecast e estudos de planejamento de capacidade.</li>
+              <li>Construção e acompanhamento de dashboards e indicadores de performance operacional.</li>
+              <li>Elaboração de relatórios para diferentes níveis de gestão, incluindo o acompanhamento diário de operações para suporte à liderança.</li>
+              <li>Interface entre as áreas de Operações, Planejamento e Tecnologia, apoiando a implementação e evolução de soluções operacionais.</li>
+            </ul>
+            <div class="timeline__stack"><span class="tag">Genesys Cloud CX</span><span class="tag">Excel</span><span class="tag">Power BI</span></div>
+          </li>
+          <li class="timeline__item" data-reveal data-reveal-delay="160">
+            <div class="timeline__meta">
+              <span>Fev/2023 — Mai/2024</span>
+              <span>·</span>
+              <span>Sorocaba, SP</span>
+            </div>
+            <h3 class="timeline__role">Jovem Aprendiz</h3>
+            <p class="timeline__company">Banco Afinz</p>
+            <p class="timeline__summary">Suporte operacional com foco em organização de informações e indicadores.</p>
+            <ul class="timeline__highlights">
+              <li>Apoio às rotinas operacionais com foco em organização, tratamento e acompanhamento de dados.</li>
+              <li>Criação e manutenção de planilhas e dashboards para monitoramento de indicadores.</li>
+            </ul>
+            <div class="timeline__stack"><span class="tag">Excel</span></div>
+          </li>
         </ol>
       </div>
     </section>
@@ -311,8 +366,57 @@
           </p>
         </div>
 
+        <!-- Conteúdo estático = fallback. projects.js substitui pelos dados da
+             GitHub API; se a API falhar, estes cards permanecem. -->
         <div class="projects-grid" data-projects>
-          <!-- Preenchido dinamicamente por projects.js -->
+          <article class="project-card" data-reveal>
+            <div class="project-card__image project-card__image--placeholder"><span class="mono">Credit-Recovery-Curve</span></div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Credit Recovery Curve</h3>
+              <div class="project-card__stack"><span class="tag">Python</span><span class="tag">Credit Analytics</span><span class="tag">Cohort Analysis</span><span class="tag">Vintage Analysis</span></div>
+              <div class="project-card__details">
+            <p class="project-card__row"><strong>Objetivo:</strong> Analisar a evolução da recuperação de crédito após o default, explorando produtos, perfis de risco, coortes e vintages para identificar padrões de performance.</p>
+            <p class="project-card__row"><strong>Desafios:</strong> Estruturar métricas de Recovery Rate e curvas de recuperação a partir de dados sintéticos e transformar os resultados em análises comparáveis.</p>
+            <p class="project-card__row"><strong>Aprendizados:</strong> Aplicação prática de Data Analytics em crédito, incluindo Recovery Curve, Cohort Analysis e Vintage Analysis.</p>
+              </div>
+              <div class="project-card__footer">
+                <span></span>
+                <a href="https://github.com/joao-torre/Credit-Recovery-Curve" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-card__image project-card__image--placeholder"><span class="mono">Performance-Analytics</span></div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Performance Analytics</h3>
+              <div class="project-card__stack"><span class="tag">Power BI</span><span class="tag">Analytics</span><span class="tag">KPIs</span><span class="tag">Business Intelligence</span></div>
+              <div class="project-card__details">
+            <p class="project-card__row"><strong>Objetivo:</strong> Analisar performance operacional por meio de indicadores, evolução temporal e identificação de desvios, transformando dados em informações para acompanhamento e decisão.</p>
+            <p class="project-card__row"><strong>Desafios:</strong> Transformar dados operacionais em KPIs, análises e visualizações que facilitem a identificação de tendências e desvios.</p>
+            <p class="project-card__row"><strong>Aprendizados:</strong> Aplicação prática de Business Intelligence, KPI design, análise de performance e storytelling analítico.</p>
+              </div>
+              <div class="project-card__footer">
+                <span></span>
+                <a href="https://github.com/joao-torre/Performance-Analytics" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card" data-reveal>
+            <div class="project-card__image project-card__image--placeholder"><span class="mono">Financial-Anomaly-Detection</span></div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Financial Anomaly Detection</h3>
+              <div class="project-card__stack"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Isolation Forest</span><span class="tag">FastAPI</span></div>
+              <div class="project-card__details">
+            <p class="project-card__row"><strong>Objetivo:</strong> Identificar comportamentos anômalos em transações financeiras sintéticas utilizando aprendizado não supervisionado e análise de dados.</p>
+            <p class="project-card__row"><strong>Desafios:</strong> Criar features comportamentais, aplicar Isolation Forest e transformar o resultado em um Risk Score demonstrativo.</p>
+            <p class="project-card__row"><strong>Aprendizados:</strong> Aplicação de Feature Engineering, Anomaly Detection, model scoring, testes e API REST em um pipeline de dados.</p>
+              </div>
+              <div class="project-card__footer">
+                <span></span>
+                <a href="https://github.com/joao-torre/Financial-Anomaly-Detection" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Ver no GitHub</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -330,7 +434,7 @@
           <article class="cert-card">
             <div class="cert-card__header">
               <div class="cert-card__logo">
-                <img src="assets/images/logos/fatec.png" alt="FATEC Votorantim" loading="lazy" onerror="this.parentElement.classList.add('cert-card__logo--fallback'); this.outerHTML='<span>FV</span>';" />
+                <img src="assets/images/logos/fatec.png" alt="FATEC Votorantim" loading="lazy" data-logo-fallback="FV" />
               </div>
               <span class="tag cert-card__hours" data-i18n="education.inProgress">Em andamento</span>
             </div>
@@ -341,8 +445,69 @@
         </div>
 
         <!-- ---- Certificações ---- -->
+        <!-- Conteúdo estático = fallback. certifications.js substitui por
+             data/certifications.json quando o JS roda. -->
         <div class="certifications-grid" data-certifications>
-          <!-- Preenchido dinamicamente por certifications.js a partir de data/certifications.json -->
+          <article class="cert-card" data-reveal data-reveal-delay="0">
+            <div class="cert-card__header">
+              <div class="cert-card__logo" data-fallback="M">
+                <img src="assets/images/logos/microsoft.png" alt="Microsoft" loading="lazy" data-logo-fallback="M" />
+              </div>
+            </div>
+            <h3 class="cert-card__title">Microsoft Certified: Fabric Analytics Engineer Associate</h3>
+            <p class="cert-card__institution">Microsoft</p>
+            <span class="cert-card__category mono">Microsoft Fabric • Engenharia de Analytics • Modelagem de Dados • Power BI</span>
+          </article>
+          <article class="cert-card" data-reveal data-reveal-delay="70">
+            <div class="cert-card__header">
+              <div class="cert-card__logo" data-fallback="FE">
+                <img src="assets/images/logos/fm2s.png" alt="FM2S Education and Consulting" loading="lazy" data-logo-fallback="FE" />
+              </div>
+            </div>
+            <h3 class="cert-card__title">Power BI</h3>
+            <p class="cert-card__institution">FM2S Education and Consulting</p>
+            <span class="cert-card__category mono">Power BI • Visualização de Dados • Business Intelligence</span>
+          </article>
+          <article class="cert-card" data-reveal data-reveal-delay="140">
+            <div class="cert-card__header">
+              <div class="cert-card__logo" data-fallback="A">
+                <img src="assets/images/logos/alura.png" alt="Alura" loading="lazy" data-logo-fallback="A" />
+              </div>
+            </div>
+            <h3 class="cert-card__title">BI com Excel: Criando Bancos de Dados com Planilhas</h3>
+            <p class="cert-card__institution">Alura</p>
+            <span class="cert-card__category mono">Business Intelligence &amp; Análise de Dados</span>
+          </article>
+          <article class="cert-card" data-reveal data-reveal-delay="210">
+            <div class="cert-card__header">
+              <div class="cert-card__logo" data-fallback="A">
+                <img src="assets/images/logos/alura.png" alt="Alura" loading="lazy" data-logo-fallback="A" />
+              </div>
+            </div>
+            <h3 class="cert-card__title">BSC: Aplicado à Gestão de Portfólios</h3>
+            <p class="cert-card__institution">Alura</p>
+            <span class="cert-card__category mono">Administração &amp; Gestão</span>
+          </article>
+          <article class="cert-card" data-reveal data-reveal-delay="280">
+            <div class="cert-card__header">
+              <div class="cert-card__logo" data-fallback="FE">
+                <img src="assets/images/logos/fm2s.png" alt="FM2S Education and Consulting" loading="lazy" data-logo-fallback="FE" />
+              </div>
+            </div>
+            <h3 class="cert-card__title">Lean Six Sigma Yellow Belt</h3>
+            <p class="cert-card__institution">FM2S Education and Consulting</p>
+            <span class="cert-card__category mono">Gestão de Processos &amp; Melhoria Contínua</span>
+          </article>
+          <article class="cert-card" data-reveal data-reveal-delay="350">
+            <div class="cert-card__header">
+              <div class="cert-card__logo" data-fallback="O">
+                <img src="assets/images/logos/oracle.png" alt="Oracle" loading="lazy" data-logo-fallback="O" />
+              </div>
+            </div>
+            <h3 class="cert-card__title">Oracle AI Database Foundations Associate - Oracle</h3>
+            <p class="cert-card__institution">Oracle</p>
+            <span class="cert-card__category mono">Oracle Database • Inteligência Artificial • Dados</span>
+          </article>
         </div>
       </div>
     </section>
@@ -364,7 +529,9 @@
             <a href="https://github.com/joao-torre" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
 
-          <p class="contact__phone mono" data-reveal data-reveal-delay="140">(15) 99714-5415 · Sorocaba, SP</p>
+          <!-- Telefone removido da página pública (scraping/spam). Para reverter,
+               basta recolocar o número nesta linha. -->
+          <p class="contact__phone mono" data-reveal data-reveal-delay="140">Sorocaba, SP · Brasil</p>
         </div>
       </div>
     </section>
@@ -381,11 +548,12 @@
         <a href="mailto:joaogabrieltorre@gmail.com">E-mail</a>
       </div>
 
-      <span class="footer__meta">© <span data-current-year></span> <span data-i18n="footer.rights">João Gabriel Torre. Todos os direitos reservados.</span></span>
+      <span class="footer__meta">© <span data-current-year>2026</span> <span data-i18n="footer.rights">João Gabriel Torre. Todos os direitos reservados.</span></span>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="assets/js/dom-utils.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/particles.js"></script>
   <script src="assets/js/typing.js"></script>

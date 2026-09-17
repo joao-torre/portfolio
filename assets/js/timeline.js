@@ -17,32 +17,36 @@
       const experiences = await response.json();
       render(experiences);
     } catch (error) {
+      // Mantém o conteúdo estático que já está no HTML — melhor uma timeline
+      // sem atualização dinâmica do que uma seção vazia.
       console.error('[timeline.js]', error);
-      list.innerHTML = `<p class="hero__tagline" style="font-size: var(--fs-body); font-family: var(--font-body); color: var(--color-text-muted);">
-        Não foi possível carregar a timeline. Sirva o projeto via HTTP (ex: <code>npx serve .</code>) para visualizar esta seção.
-      </p>`;
     }
   }
 
   function render(experiences) {
+    // Escapa tudo que vem do JSON antes de ir para innerHTML
+    const esc = window.portfolioDom?.escapeHtml || ((v) => String(v ?? ''));
+
     list.innerHTML = experiences
       .map((exp, index) => {
         const lang = window.portfolioI18n?.getLanguage() || 'pt';
         const localized = exp[lang] || exp.pt || exp;
-        const stackTags = exp.stack.map((s) => `<span class="tag">${s}</span>`).join('');
-        const highlights = localized.highlights.map((h) => `<li>${h}</li>`).join('');
+        const stack = Array.isArray(exp.stack) ? exp.stack : [];
+        const highlightList = Array.isArray(localized.highlights) ? localized.highlights : [];
+        const stackTags = stack.map((s) => `<span class="tag">${esc(s)}</span>`).join('');
+        const highlights = highlightList.map((h) => `<li>${esc(h)}</li>`).join('');
 
         return `
           <li class="timeline__item${exp.current ? ' timeline__item--current' : ''}" data-reveal data-reveal-delay="${index * 80}">
             <div class="timeline__meta">
-              <span>${localized.period}</span>
+              <span>${esc(localized.period)}</span>
               <span>·</span>
-              <span>${exp.location}</span>
-              ${exp.current ? `<span class="timeline__badge">${window.portfolioI18n?.t('dynamic.current') || 'Atual'}</span>` : ''}
+              <span>${esc(exp.location)}</span>
+              ${exp.current ? `<span class="timeline__badge">${esc(window.portfolioI18n?.t('dynamic.current') || 'Atual')}</span>` : ''}
             </div>
-            <h3 class="timeline__role">${localized.role}</h3>
-            <p class="timeline__company">${exp.company}</p>
-            ${localized.summary ? `<p class="timeline__summary">${localized.summary}</p>` : ''}
+            <h3 class="timeline__role">${esc(localized.role)}</h3>
+            <p class="timeline__company">${esc(exp.company)}</p>
+            ${localized.summary ? `<p class="timeline__summary">${esc(localized.summary)}</p>` : ''}
             <ul class="timeline__highlights">${highlights}</ul>
             <div class="timeline__stack">${stackTags}</div>
           </li>
