@@ -1,4 +1,4 @@
-# João Gabriel Torre — Portfolio
+# João Torre Portfolio
 
 Portfólio profissional de João Gabriel Gomes da Torre, com foco em Data Analytics, Business Intelligence, Credit Analytics e Financial Analytics.
 
